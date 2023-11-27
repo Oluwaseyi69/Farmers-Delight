@@ -37,6 +37,13 @@ public class UserServiceImplTest {
 
         userService.register(registerUserRequest);
         assertThat(userRepository.count(), is(1L));
+
+        RegisterUserRequest registerUserRequest1 = new RegisterUserRequest();
+        registerUserRequest1.setUsername("Seyi");
+        registerUserRequest1.setPassword("password");
+
+        userService.register(registerUserRequest1);
+        assertThat(userRepository.count(), is(2L));
     }
 
     @Test

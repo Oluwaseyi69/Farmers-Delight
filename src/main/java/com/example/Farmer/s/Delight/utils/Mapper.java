@@ -1,6 +1,8 @@
 package com.example.Farmer.s.Delight.utils;
 
+import com.example.Farmer.s.Delight.data.model.Product;
 import com.example.Farmer.s.Delight.data.model.User;
+import com.example.Farmer.s.Delight.dtos.request.AddProductRequest;
 import com.example.Farmer.s.Delight.dtos.request.RegisterUserRequest;
 import com.example.Farmer.s.Delight.dtos.request.RegisterUserResponse;
 
@@ -22,5 +24,12 @@ public class Mapper {
                 .ofPattern("EEE dd/MMM/yyyy HH:mm:ss a")
                 .format(LocalDateTime.now()));
         return registerUserResponse;
+    }
+
+    public static Product map(AddProductRequest addProductRequest){
+        Product product = new Product();
+        product.setProductName(addProductRequest.getProductName());
+        product.setProductType(addProductRequest.getProductType());
+        return product;
     }
 }

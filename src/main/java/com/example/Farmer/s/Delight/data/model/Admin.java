@@ -8,9 +8,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document
 public class Admin {
     @Id
-    private int id;
+    private String id;
     private String username;
     private String password;
-    private String isLoggedIn;
+    private boolean logIn;
 
 }
